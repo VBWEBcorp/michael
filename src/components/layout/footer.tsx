@@ -137,6 +137,27 @@ export function Footer() {
           </p>
         </div>
       </div>
+
+      {/* Demo disclaimer — bandeau rouge en pied de page */}
+      <div className="border-t border-red-500/40 bg-red-600 text-white">
+        <div className="mx-auto flex max-w-6xl flex-col items-center justify-center gap-1 px-4 py-4 text-center sm:px-6 lg:px-8">
+          <p className="text-sm font-bold uppercase tracking-wide">
+            Maquette de démonstration — propriété exclusive de{' '}
+            <a
+              href="https://ouibo.fr"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="underline underline-offset-2 hover:text-red-100"
+            >
+              ouibo.fr
+            </a>
+          </p>
+          <p className="text-xs text-red-50">
+            Ce site est une présentation à but de démonstration uniquement. Toute reproduction, exploitation ou utilisation à des fins
+            professionnelles ou commerciales est strictement interdite.
+          </p>
+        </div>
+      </div>
     </footer>
   )
 }
