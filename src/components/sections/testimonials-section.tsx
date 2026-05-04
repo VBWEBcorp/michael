@@ -6,22 +6,22 @@ import { SectionTitle } from '@/components/ui/section-title'
 import { useContent } from '@/hooks/use-content'
 
 const defaultTestimonials = [
-  { name: 'Marie D.', company: 'Boulangerie Le Fournil', text: "Depuis le nouveau site, je reçois 3 fois plus d'appels. Les clients nous trouvent enfin sur Google.", stars: 5 },
-  { name: 'Thomas L.', company: 'Cabinet Conseil TLR', text: 'Un travail soigné, un site clair et professionnel. Mes prospects comprennent immédiatement ce que je propose.', stars: 5 },
-  { name: 'Camille B.', company: 'Atelier Camille', text: "Le site reflète parfaitement l'univers de ma marque. J'ai gagné en crédibilité auprès de mes clients.", stars: 5 },
-  { name: 'Laurent M.', company: 'LM Rénovation', text: 'En trois mois, mon chiffre a augmenté de 40 %. Le site et le SEO font vraiment la différence.', stars: 5 },
-  { name: 'Nadia K.', company: 'Agence NovaTour', text: "Un accompagnement au top, des délais respectés et un résultat qui dépasse mes attentes.", stars: 5 },
-  { name: 'Sophie R.', company: 'Studio Pilates Zen', text: "L'équipe a su capter l'ambiance de mon studio. Les réservations ont décollé.", stars: 5 },
-  { name: 'Pierre V.', company: 'Transports Vallée', text: "Un investissement rentabilisé en quelques semaines. Des contacts qualifiés chaque jour.", stars: 5 },
-  { name: 'Julie A.', company: "Les Jardins d'Alice", text: "Ils ont transformé notre présence en ligne. Le site est magnifique et nos ventes ont triplé.", stars: 5 },
-  { name: 'Franck G.', company: 'Studio FG', text: "Design épuré, navigation fluide, exactement ce que je voulais pour présenter mes projets.", stars: 4 },
-  { name: 'Émilie T.', company: 'Clinique Vétérinaire du Parc', text: "Nos clients trouvent toutes les infos facilement. La prise de rendez-vous a changé notre quotidien.", stars: 5 },
+  { name: 'Marie D.', company: 'Drancy (93)', text: "Ravalement complet de notre maison réalisé dans les temps. Les équipes ont été propres, ponctuelles et le résultat est superbe.", stars: 5 },
+  { name: 'Thomas L.', company: 'Le Bourget (93)', text: 'Toiture entièrement refaite après tempête. Devis clair, prix juste et travail irréprochable. Je recommande sans hésiter.', stars: 5 },
+  { name: 'Camille B.', company: 'Aulnay-sous-Bois (93)', text: "Une équipe à l'écoute qui a su comprendre nos contraintes budgétaires. La rénovation de la façade a transformé la maison.", stars: 5 },
+  { name: 'Laurent M.', company: 'Bobigny (93)', text: 'Maçonnerie pour une extension : conseils précieux, exécution soignée et délai respecté à la semaine près.', stars: 5 },
+  { name: 'Nadia K.', company: 'Bondy (93)', text: "25 ans d'expérience, ça se sent. Travaux de peinture et reprise des enduits parfaitement maîtrisés.", stars: 5 },
+  { name: 'Sophie R.', company: 'Pantin (93)', text: "Réfection complète de la toiture et zinguerie. Très professionnel du premier rendez-vous à la facture finale.", stars: 5 },
+  { name: 'Pierre V.', company: 'Noisy-le-Sec (93)', text: "Devis transparent, pas de mauvaise surprise. Les artisans connaissent parfaitement leur métier.", stars: 5 },
+  { name: 'Julie A.', company: "Saint-Denis (93)", text: "Notre façade avait besoin d'un sérieux rafraîchissement. Le résultat dépasse nos attentes, merci à toute l'équipe !", stars: 5 },
+  { name: 'Franck G.', company: 'Stains (93)', text: "Travaux de gros œuvre menés avec rigueur. Une entreprise de confiance que je recommande à mes proches.", stars: 4 },
+  { name: 'Émilie T.', company: 'Villepinte (93)', text: "Peinture intérieure complète après dégât des eaux. Travail soigné, délais tenus et chantier propre.", stars: 5 },
 ]
 
 const defaults = {
-  eyebrow: 'Témoignages',
-  title: 'Ils nous font confiance',
-  description: 'Des entreprises de tous horizons qui ont gagné en visibilité et en crédibilité.',
+  eyebrow: 'Avis clients',
+  title: 'La satisfaction de nos clients, notre meilleure référence',
+  description: 'Particuliers et professionnels d\'Île-de-France témoignent de la qualité de nos chantiers et du sérieux de nos équipes.',
   testimonials: defaultTestimonials,
 }
 

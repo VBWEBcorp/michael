@@ -2,7 +2,7 @@
 
 import { motion } from 'framer-motion'
 import {
-  BarChart3, Code, Globe, Megaphone, Palette, Search, ShieldCheck, Smartphone,
+  Brush, Building2, CloudRain, Hammer, Home, Layers, PaintBucket, Wrench,
 } from 'lucide-react'
 
 import { CtaSection } from '@/components/sections/cta-section'
@@ -11,24 +11,24 @@ import { Card, CardDescription, CardHeader, CardTitle } from '@/components/ui/ca
 import { useContent } from '@/hooks/use-content'
 
 const ease = [0.22, 1, 0.36, 1] as const
-const defaultIcons = [Globe, Smartphone, Search, Palette, Megaphone, Code, ShieldCheck, BarChart3]
+const defaultIcons = [Home, CloudRain, Building2, Layers, Hammer, Brush, PaintBucket, Wrench]
 
 const defaults = {
   hero: {
-    eyebrow: 'Services',
-    title: "Tout ce qu'il faut pour réussir en ligne",
-    description: "Des prestations complètes, de la conception à l'accompagnement continu, adaptées à toutes les tailles d'entreprise.",
-    image: 'https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&w=1920&q=80',
+    eyebrow: 'Nos prestations',
+    title: 'Tous corps d\'état pour bâtir et rénover',
+    description: 'De la toiture aux finitions intérieures, Michael Sauzaire prend en charge l\'intégralité de vos travaux avec une exigence constante de qualité et de fiabilité.',
+    image: 'https://www.crm-sauzaire.com/wp-content/uploads/go-x/u/efbb17eb-3f7d-4745-86a4-80d02bd7801c/image.jpg',
   },
   services: [
-    { title: 'Création de site vitrine', description: 'Un site moderne, rapide et responsive qui présente clairement votre activité et inspire confiance à vos visiteurs.' },
-    { title: 'Application web', description: 'Outils métier, plateformes de réservation, espaces clients : des applications pensées pour simplifier votre quotidien.' },
-    { title: 'Référencement naturel (SEO)', description: 'Optimisation technique, contenu stratégique et suivi de positionnement pour gagner en visibilité sur Google.' },
-    { title: 'Identité visuelle', description: 'Logo, charte graphique, supports de communication : une image cohérente qui vous ressemble.' },
-    { title: 'Communication digitale', description: 'Stratégie de contenu, réseaux sociaux et campagnes pour développer votre audience en ligne.' },
-    { title: 'Développement sur mesure', description: 'Intégrations, automatisations, API : des solutions techniques taillées pour vos besoins spécifiques.' },
-    { title: 'Maintenance & sécurité', description: 'Mises à jour, sauvegardes, monitoring et corrections pour un site toujours performant et sécurisé.' },
-    { title: 'Analyse & reporting', description: 'Tableaux de bord clairs pour suivre vos performances, comprendre vos visiteurs et ajuster votre stratégie.' },
+    { title: 'Couverture & toiture', description: 'Pose et rénovation de toitures en tuiles, ardoises ou zinc. Réfection complète, démoussage et entretien.' },
+    { title: 'Étanchéité & zinguerie', description: 'Gouttières, chéneaux, descentes, solins : étanchéité parfaite et durable contre les intempéries.' },
+    { title: 'Ravalement de façade', description: 'Nettoyage, traitement des fissures, enduits, peinture façade. Redonnez éclat et protection à votre bâtiment.' },
+    { title: 'Isolation thermique extérieure', description: 'ITE performante pour réduire vos factures énergétiques tout en embellissant votre façade.' },
+    { title: 'Maçonnerie générale', description: 'Gros œuvre, extensions, ouvertures, murs porteurs, dallages, escaliers : un savoir-faire complet.' },
+    { title: 'Rénovation intérieure', description: 'Cloisons, plafonds, enduits, plâtrerie : préparation et finition de tous vos espaces de vie.' },
+    { title: 'Peinture intérieure', description: 'Préparation des supports, application soignée, choix des teintes : un rendu irréprochable pièce par pièce.' },
+    { title: 'Peinture extérieure', description: 'Façades, volets, ferronneries : protection et embellissement durables avec des produits adaptés.' },
   ],
 }
 
@@ -51,7 +51,7 @@ export function ServicesContent() {
         <div className="mx-auto max-w-6xl px-4 py-20 sm:px-6 lg:px-8 lg:py-28">
           <div className="grid gap-5 sm:grid-cols-2 lg:grid-cols-4">
             {services.map((s: any, i: number) => {
-              const Icon = defaultIcons[i] ?? Globe
+              const Icon = defaultIcons[i] ?? Home
               return (
                 <motion.div
                   key={s.title || i}

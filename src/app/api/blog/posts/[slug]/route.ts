@@ -3,6 +3,7 @@ import { connectDB } from '@/lib/db'
 import { BlogPost } from '@/models/Blog'
 import { verifyAuth } from '@/lib/auth'
 import { visiblePostFilter } from '@/lib/blog-filters'
+import { demoPosts } from '@/lib/demo-blog'
 
 type Params = Promise<{ slug: string }>
 
@@ -11,8 +12,9 @@ type Params = Promise<{ slug: string }>
 // hidden everywhere — even admin gets a 404 here, so they cannot be edited
 // or deleted via the CMS (only via direct DB access).
 export async function GET(request: NextRequest, { params }: { params: Params }) {
+  const { slug } = await params
+
   try {
-    const { slug } = await params
     await connectDB()
 
     const { authenticated, user } = await verifyAuth(request)
@@ -22,15 +24,16 @@ export async function GET(request: NextRequest, { params }: { params: Params }) 
       : { slug, ...visiblePostFilter() }
 
     const post = await BlogPost.findOne(filter)
-    if (!post) {
-      return NextResponse.json({ error: 'Post not found' }, { status: 404 })
-    }
-
-    return NextResponse.json(post)
+    if (post) return NextResponse.json(post)
   } catch (error) {
     console.error('Blog post error:', error)
-    return NextResponse.json({ error: 'Internal server error' }, { status: 500 })
   }
+
+  // Fallback démo : article hardcodé pour la présentation client
+  const demo = demoPosts.find((p) => p.slug === slug)
+  if (demo) return NextResponse.json(demo)
+
+  return NextResponse.json({ error: 'Post not found' }, { status: 404 })
 }
 
 // PUT update post (admin only)

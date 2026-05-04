@@ -1,7 +1,7 @@
 'use client'
 
 import { motion } from 'framer-motion'
-import { ArrowRight, Globe, Palette, Search, ShieldCheck } from 'lucide-react'
+import { ArrowRight, Home, Brush, PaintBucket, Wrench } from 'lucide-react'
 import Link from 'next/link'
 
 import { SectionTitle } from '@/components/ui/section-title'
@@ -9,15 +9,15 @@ import { Button } from '@/components/ui/button'
 import { Card, CardDescription, CardHeader, CardTitle } from '@/components/ui/card'
 import { useContent } from '@/hooks/use-content'
 
-const iconMap: Record<string, any> = { Globe, Search, Palette, ShieldCheck }
+const iconMap: Record<string, any> = { Home, Brush, PaintBucket, Wrench }
 const defaultServices = [
-  { title: 'Création de site web', desc: 'Sites vitrines modernes, responsive et optimisés pour convertir vos visiteurs en clients.' },
-  { title: 'Référencement SEO', desc: 'Stratégie de contenu et optimisation technique pour apparaître en première page Google.' },
-  { title: 'Identité visuelle', desc: 'Logo, charte graphique et supports cohérents qui reflètent votre image de marque.' },
-  { title: 'Maintenance & support', desc: 'Mises à jour, sécurité et accompagnement continu pour garder votre site performant.' },
+  { title: 'Couverture & toiture', desc: 'Pose, rénovation et entretien de toitures, zinguerie et étanchéité par des couvreurs expérimentés.' },
+  { title: 'Ravalement de façade', desc: 'Nettoyage, isolation thermique extérieure et embellissement de vos façades dans le respect des normes.' },
+  { title: 'Maçonnerie générale', desc: 'Gros œuvre, extensions, ouvertures, dallages : un savoir-faire artisanal pour bâtir solide et durable.' },
+  { title: 'Peinture intérieure & extérieure', desc: 'Préparation des supports et finitions soignées pour transformer durablement vos espaces.' },
 ]
 
-const defaultIcons = [Globe, Search, Palette, ShieldCheck]
+const defaultIcons = [Home, Brush, Wrench, PaintBucket]
 
 const ease = [0.22, 1, 0.36, 1] as const
 
@@ -33,13 +33,13 @@ export function ServicesPreview() {
     <section className="border-b border-border/60">
       <div className="mx-auto max-w-6xl px-4 py-20 sm:px-6 lg:px-8 lg:py-28">
         <SectionTitle
-          eyebrow="Nos services"
-          title="Des solutions adaptées à votre activité"
-          description="Quel que soit votre secteur, nous vous aidons à développer votre présence et à atteindre vos objectifs."
+          eyebrow="Nos prestations"
+          title="Tous corps d'état pour votre habitat"
+          description="De la charpente à la peinture, nous prenons en charge l'ensemble de vos travaux avec un seul interlocuteur et un cahier des charges respecté."
         />
         <div className="mt-14 grid gap-5 sm:grid-cols-2">
           {services.map((s: any, i: number) => {
-            const Icon = defaultIcons[i] ?? Globe
+            const Icon = defaultIcons[i] ?? Home
             return (
               <motion.div
                 key={s.title || i}
@@ -64,7 +64,7 @@ export function ServicesPreview() {
         <div className="mt-10 text-center">
           <Button variant="outline" className="group" asChild>
             <Link href="/services">
-              Voir tous nos services
+              Découvrir toutes nos prestations
               <ArrowRight className="transition-transform group-hover:translate-x-0.5" />
             </Link>
           </Button>

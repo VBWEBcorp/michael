@@ -8,18 +8,19 @@ import { useCallback, useEffect, useRef, useState } from 'react'
 import { Button } from '@/components/ui/button'
 import { useContent } from '@/hooks/use-content'
 
+const CRM_BASE = 'https://www.crm-sauzaire.com/wp-content/uploads/go-x/u'
 const defaultImages = [
-  'https://images.unsplash.com/photo-1497366216548-37526070297c?auto=format&fit=crop&w=720&q=80',
-  'https://images.unsplash.com/photo-1553877522-43269d4ea984?auto=format&fit=crop&w=720&q=80',
-  'https://images.unsplash.com/photo-1600880292203-757bb62b4baf?auto=format&fit=crop&w=720&q=80',
-  'https://images.unsplash.com/photo-1524758631624-e2822e304c36?auto=format&fit=crop&w=720&q=80',
-  'https://images.unsplash.com/photo-1542744173-8e7e53415bb0?auto=format&fit=crop&w=720&q=80',
-  'https://images.unsplash.com/photo-1556761175-5973dc0f32e7?auto=format&fit=crop&w=720&q=80',
+  `${CRM_BASE}/98255b0c-0248-48b3-909d-60c4032b1168/image.jpg`,
+  `${CRM_BASE}/ac734ccd-5fb9-4b71-bf6d-550ccb290eed/image.jpg`,
+  `${CRM_BASE}/8c4b9e36-ffd5-4c17-94e9-ff8d83c3d8c5/image.jpg`,
+  `${CRM_BASE}/5aabe269-2c4f-4c53-bcdf-0af4fccae8a6/image.jpg`,
+  `${CRM_BASE}/6679a358-c90f-46f1-b4a4-0d27d44bc350/image.jpg`,
+  `${CRM_BASE}/ad90fe30-e096-4f58-996d-a3397067cab6/image.jpg`,
 ]
 
 const defaults = {
-  eyebrow: 'Galerie',
-  title: 'En coulisses',
+  eyebrow: 'Nos réalisations',
+  title: 'Quelques chantiers récents',
   images: defaultImages,
 }
 

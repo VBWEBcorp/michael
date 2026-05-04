@@ -16,9 +16,9 @@ const ease = [0.22, 1, 0.36, 1] as const
 const defaults = {
   hero: {
     eyebrow: 'Contact',
-    title: 'Parlons de votre projet',
-    description: 'Remplissez le formulaire ci-dessous ou contactez-nous directement. Nous répondons sous 24h.',
-    image: 'https://images.unsplash.com/photo-1423666639041-f56000c27a9a?auto=format&fit=crop&w=1920&q=80',
+    title: 'Demandez votre devis gratuit',
+    description: 'Décrivez-nous votre projet — toiture, façade, gros œuvre ou peinture. Nous vous répondons sous 48h pour organiser une visite et établir un devis détaillé sans engagement.',
+    image: 'https://www.crm-sauzaire.com/wp-content/uploads/go-x/u/be71dbbd-07c5-408c-9651-6f9c04d4d42b/image.jpg',
   },
   info: {
     phone: siteConfig.phone,
@@ -62,7 +62,7 @@ export function ContactContent() {
             >
               <Card className="rounded-2xl border-border/80 bg-card/70 shadow-[var(--shadow-md)] ring-1 ring-foreground/5">
                 <CardHeader>
-                  <CardTitle className="font-display text-lg">Envoyer un message</CardTitle>
+                  <CardTitle className="font-display text-lg">Décrivez votre chantier</CardTitle>
                 </CardHeader>
                 <CardContent>
                   <form className="space-y-5" onSubmit={(e) => e.preventDefault()}>
@@ -78,23 +78,23 @@ export function ContactContent() {
                     </div>
                     <div className="space-y-2">
                       <Label htmlFor="email">Email</Label>
-                      <Input id="email" name="email" type="email" placeholder="jean@entreprise.fr" autoComplete="email" className="h-11 rounded-xl" />
+                      <Input id="email" name="email" type="email" placeholder="jean.dupont@email.fr" autoComplete="email" className="h-11 rounded-xl" />
                     </div>
                     <div className="space-y-2">
-                      <Label htmlFor="phone">Téléphone (optionnel)</Label>
+                      <Label htmlFor="phone">Téléphone</Label>
                       <Input id="phone" name="phone" type="tel" placeholder="06 12 34 56 78" autoComplete="tel" className="h-11 rounded-xl" />
                     </div>
                     <div className="space-y-2">
-                      <Label htmlFor="message">Votre message</Label>
+                      <Label htmlFor="message">Nature des travaux</Label>
                       <textarea
                         id="message"
                         name="message"
                         rows={5}
-                        placeholder="Décrivez votre projet en quelques mots..."
+                        placeholder="Décrivez votre projet : type de travaux (toiture, façade, maçonnerie, peinture), surface approximative, localisation..."
                         className="w-full rounded-xl border border-input bg-transparent px-3 py-2.5 text-sm leading-relaxed text-foreground transition-colors placeholder:text-muted-foreground focus-visible:border-ring focus-visible:outline-none focus-visible:ring-3 focus-visible:ring-ring/50"
                       />
                     </div>
-                    <Button type="submit" size="lg" className="w-full">Envoyer le message</Button>
+                    <Button type="submit" size="lg" className="w-full">Demander mon devis</Button>
                   </form>
                 </CardContent>
               </Card>

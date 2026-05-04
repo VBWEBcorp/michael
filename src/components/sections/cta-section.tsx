@@ -11,24 +11,26 @@ import { useContent } from '@/hooks/use-content'
 const ease = [0.22, 1, 0.36, 1] as const
 
 const defaults = {
-  eyebrow: 'Prêt à démarrer ?',
-  title: 'Parlons de votre projet',
-  description: 'Un échange simple et sans engagement pour comprendre vos besoins et vous proposer la meilleure approche.',
-  button: 'Demander un devis gratuit',
+  eyebrow: 'Un projet de rénovation ?',
+  title: 'Recevez votre devis gratuit sous 48h',
+  description: 'Décrivez-nous votre chantier — toiture, façade, gros œuvre ou peinture. Un de nos experts se déplace pour évaluer vos besoins et vous proposer un devis clair et détaillé, sans engagement.',
+  button: 'Demander mon devis gratuit',
 }
 
+const CRM_BASE = 'https://www.crm-sauzaire.com/wp-content/uploads/go-x/u'
+
 const col1Images = [
-  'https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=400&h=500&fit=crop&q=75',
-  'https://images.unsplash.com/photo-1553877522-43269d4ea984?w=400&h=500&fit=crop&q=75',
-  'https://images.unsplash.com/photo-1551434678-e076c223a692?w=400&h=500&fit=crop&q=75',
-  'https://images.unsplash.com/photo-1531973576160-7125cd663d86?w=400&h=500&fit=crop&q=75',
+  `${CRM_BASE}/98255b0c-0248-48b3-909d-60c4032b1168/image.jpg`,
+  `${CRM_BASE}/8c4b9e36-ffd5-4c17-94e9-ff8d83c3d8c5/image.jpg`,
+  `${CRM_BASE}/5aabe269-2c4f-4c53-bcdf-0af4fccae8a6/image.jpg`,
+  `${CRM_BASE}/703ef170-c28e-49de-8aaa-354b53754228/image.jpg`,
 ]
 
 const col2Images = [
-  'https://images.unsplash.com/photo-1600880292203-757bb62b4baf?w=400&h=500&fit=crop&q=75',
-  'https://images.unsplash.com/photo-1542744173-8e7e53415bb0?w=400&h=500&fit=crop&q=75',
-  'https://images.unsplash.com/photo-1519389950473-47ba0277781c?w=400&h=500&fit=crop&q=75',
-  'https://images.unsplash.com/photo-1573164713988-8665fc963095?w=400&h=500&fit=crop&q=75',
+  `${CRM_BASE}/ac734ccd-5fb9-4b71-bf6d-550ccb290eed/image.jpg`,
+  `${CRM_BASE}/6679a358-c90f-46f1-b4a4-0d27d44bc350/image.jpg`,
+  `${CRM_BASE}/ad90fe30-e096-4f58-996d-a3397067cab6/image.jpg`,
+  `${CRM_BASE}/afaf0eeb-878c-42ba-8b0c-6694b6f40a52/image.jpg`,
 ]
 
 function ScrollColumn({ images, direction, speed }: { images: string[]; direction: 'up' | 'down'; speed: number }) {

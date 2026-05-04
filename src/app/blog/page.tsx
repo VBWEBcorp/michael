@@ -4,6 +4,7 @@ import { connectDB } from '@/lib/db'
 import { BlogSettings, BlogPost } from '@/models/Blog'
 import { visiblePostFilter } from '@/lib/blog-filters'
 import { siteConfig } from '@/lib/seo'
+import { demoBlogSettings, demoPosts } from '@/lib/demo-blog'
 import BlogPageContent from './blog-page-content'
 
 export const revalidate = 3600
@@ -43,16 +44,9 @@ export async function generateMetadata(): Promise<Metadata> {
   }
 }
 
-const defaultSettings = {
-  enabled: true,
-  title: 'Nos dernières actualités',
-  description: 'Retrouvez nos conseils, nos projets récents et les tendances du secteur.',
-  eyebrow: 'Blog',
-}
-
 export default async function BlogPage() {
-  let settings: any = defaultSettings
-  let posts: any[] = []
+  let settings: any = demoBlogSettings
+  let posts: any[] = demoPosts
   let jsonLd = null
 
   try {
@@ -67,11 +61,13 @@ export default async function BlogPage() {
     ])
 
     if (settingsDoc) settings = settingsDoc
-    posts = (postsDocs as any[]).map((p) => ({
-      ...p,
-      _id: String(p._id),
-      publishedAt: p.publishedAt ? new Date(p.publishedAt).toISOString() : null,
-    }))
+    if (postsDocs && (postsDocs as any[]).length > 0) {
+      posts = (postsDocs as any[]).map((p) => ({
+        ...p,
+        _id: String(p._id),
+        publishedAt: p.publishedAt ? new Date(p.publishedAt).toISOString() : null,
+      }))
+    }
 
     jsonLd = {
       '@context': 'https://schema.org',

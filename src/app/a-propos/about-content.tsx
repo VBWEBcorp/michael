@@ -1,7 +1,7 @@
 'use client'
 
 import { motion, useScroll, useTransform } from 'framer-motion'
-import { Heart, Lightbulb, Users } from 'lucide-react'
+import { Award, HardHat, ShieldCheck } from 'lucide-react'
 import Image from 'next/image'
 import { useRef } from 'react'
 
@@ -11,25 +11,25 @@ import { SectionTitle } from '@/components/ui/section-title'
 import { useContent } from '@/hooks/use-content'
 
 const ease = [0.22, 1, 0.36, 1] as const
-const defaultIcons = [Heart, Lightbulb, Users]
+const defaultIcons = [Award, HardHat, ShieldCheck]
 
 const defaults = {
   hero: {
     eyebrow: 'À propos',
-    title: 'Une équipe engagée à vos côtés',
-    description: 'Nous croyons que chaque entreprise mérite une présence en ligne à la hauteur de ses ambitions. Depuis notre création, nous accompagnons artisans, PME et indépendants avec des solutions simples, efficaces et soignées.',
-    image: 'https://images.unsplash.com/photo-1522071820081-009f0129c71c?auto=format&fit=crop&w=1920&q=80',
+    title: '25 ans de passion pour le bâtiment',
+    description: 'Implantée à Drancy, Michael Sauzaire est une entreprise familiale spécialisée dans la couverture, le ravalement, la maçonnerie et la peinture. Depuis 25 ans, nous accompagnons particuliers et professionnels d\'Île-de-France avec un savoir-faire artisanal et une exigence de qualité.',
+    image: 'https://www.crm-sauzaire.com/wp-content/uploads/go-x/u/337ae9d3-e708-4dba-a7e2-8e8e729806b4/image.jpg',
   },
   values: [
-    { title: 'Proximité', description: 'Un interlocuteur unique, disponible, qui connaît votre projet sur le bout des doigts.' },
-    { title: 'Clarté', description: 'Pas de jargon inutile. Des explications simples, des livrables concrets.' },
-    { title: 'Sur mesure', description: "Chaque projet est différent. Nous adaptons nos solutions à votre réalité, pas l'inverse." },
+    { title: 'Expérience', description: '25 ans d\'interventions sur tous types de bâtiments — du pavillon individuel à l\'immeuble collectif.' },
+    { title: 'Savoir-faire artisanal', description: 'Couvreurs, maçons, façadiers et peintres formés aux règles de l\'art et aux techniques traditionnelles comme aux matériaux modernes.' },
+    { title: 'Engagement qualité', description: 'Garantie décennale, devis transparents, finitions soignées et délais respectés à chaque étape de votre chantier.' },
   ],
   gallery: [
-    'https://images.unsplash.com/photo-1522071820081-009f0129c71c?auto=format&fit=crop&w=600&q=80',
-    'https://images.unsplash.com/photo-1497366216548-37526070297c?auto=format&fit=crop&w=600&q=80',
-    'https://images.unsplash.com/photo-1553877522-43269d4ea984?auto=format&fit=crop&w=600&q=80',
-    'https://images.unsplash.com/photo-1600880292203-757bb62b4baf?auto=format&fit=crop&w=600&q=80',
+    'https://www.crm-sauzaire.com/wp-content/uploads/go-x/u/98255b0c-0248-48b3-909d-60c4032b1168/image.jpg',
+    'https://www.crm-sauzaire.com/wp-content/uploads/go-x/u/ac734ccd-5fb9-4b71-bf6d-550ccb290eed/image.jpg',
+    'https://www.crm-sauzaire.com/wp-content/uploads/go-x/u/8c4b9e36-ffd5-4c17-94e9-ff8d83c3d8c5/image.jpg',
+    'https://www.crm-sauzaire.com/wp-content/uploads/go-x/u/5aabe269-2c4f-4c53-bcdf-0af4fccae8a6/image.jpg',
   ],
 }
 
@@ -57,7 +57,7 @@ function ValuesTimeline({ values }: { values: any[] }) {
 
       <ul className="space-y-12 md:space-y-16">
         {values.map((v: any, i: number) => {
-          const Icon = defaultIcons[i] ?? Heart
+          const Icon = defaultIcons[i] ?? Award
           const isRight = i % 2 === 1
           return (
             <li key={v.title || i} className="relative">
@@ -133,14 +133,14 @@ export function AboutContent() {
 
       <section className="border-b border-border/60 bg-muted/10">
         <div className="mx-auto max-w-6xl px-4 py-20 sm:px-6 lg:px-8 lg:py-28">
-          <SectionTitle eyebrow="Nos valeurs" title="Ce qui nous guide au quotidien" />
+          <SectionTitle eyebrow="Nos valeurs" title="Ce qui guide chacun de nos chantiers" />
           <ValuesTimeline values={values} />
         </div>
       </section>
 
       <section className="border-b border-border/60">
         <div className="mx-auto max-w-6xl px-4 py-20 sm:px-6 lg:px-8 lg:py-28">
-          <SectionTitle eyebrow="En images" title="Notre quotidien" />
+          <SectionTitle eyebrow="En images" title="Nos chantiers, notre signature" />
           <div className="mt-14 grid grid-cols-2 gap-3 sm:gap-4 md:grid-cols-4">
             {gallery.map((src: string, i: number) => (
               <motion.div
